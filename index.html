@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Арсеній · Каталог проєктів & PWA</title>
+  <meta name="description" content="Каталог проєктів, веб-додатків PWA та Telegram-ботів Арсенія (@arsen2010arsen). Пряме тестування онлайн.">
+  <meta name="theme-color" content="#0b0f17">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0f17'/%3E%3Cpath d='M18 46V18h14a14 14 0 0 1 0 28H18zm14-14h12' stroke='%2310b981' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-text">Arsenii <span class="brand-badge">dist hub</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#projects">Проєкти</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          Telegram
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>Каталог публічних та закритих розробок</span>
+      </div>
+      <h1 class="hero-title">
+        Проєкти, які можна <span class="gradient-text">протестувати в 1 клік</span>
+      </h1>
+      <p class="hero-subtitle">
+        Студентські розробки, практичні офлайн-ready PWA додатки та асинхронні Telegram-боти.
+        Тут можна одразу спробувати функціонал без встановлення стороннього софту.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Проєктів у списку</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">PWA</div>
+          <div class="stat-label">Працюють у браузері & офлайн</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Безпека даних (Local-first)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section-projects" id="projects">
+    <div class="container">
+      <div class="toolbar">
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">Всі проєкти (5)</button>
+          <button class="chip" data-filter="pwa">📱 PWA додатки (2)</button>
+          <button class="chip" data-filter="bot">🤖 Telegram-боти (3)</button>
+        </div>
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" placeholder="Пошук: ai, food, telegram, gym..." autocomplete="off">
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- FOODTRACKER AI -->
+        <article class="project-card" data-category="pwa" data-keywords="foodtracker ai flutter dart firebase gemini калорії харчування їжа pwa">
+          <div class="card-header">
+            <div class="card-icon-wrap icon-food">🍎</div>
+            <div class="card-badges">
+              <span class="badge badge-accent">PWA Додаток</span>
+              <span class="badge badge-purple">Gemini AI</span>
+            </div>
+          </div>
+          <h2 class="card-title">FoodTracker AI</h2>
+          <p class="card-desc">
+            Розумний щоденник харчування у форматі Progressive Web App. Замість ручного підрахунку використовує штучний інтелект Google Gemini для розпізнавання страв за фотографією та автопідрахунку КБЖВ.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">Gemini API</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener" class="btn btn-primary">
+              🚀 Відкрити PWA онлайн
+            </a>
+            <a href="https://github.com/arsen2010arsen/FoodTracker" target="_blank" rel="noopener" class="btn btn-outline" title="Переглянути на GitHub">
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- GYM LOGBOOK -->
+        <article class="project-card" data-category="pwa" data-keywords="gym logbook тренування зал спорт вправи ваги localstorage pwa javascript">
+          <div class="card-header">
+            <div class="card-icon-wrap icon-gym">🏋️‍♂️</div>
+            <div class="card-badges">
+              <span class="badge badge-accent">PWA Додаток</span>
+              <span class="badge badge-blue">Zero-Telemetry</span>
+            </div>
+          </div>
+          <h2 class="card-title">Gym Logbook</h2>
+          <p class="card-desc">
+            Мінімалістичний цифровий журнал тренувань для бодібілдингу. Zero friction — жодних акаунтів, реклами чи серверів. 100% ваших записів надійно зберігаються виключно в LocalStorage вашого браузера.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">CSS3 Dark</span>
+            <span class="tech-tag">LocalStorage</span>
+            <span class="tech-tag">PWA</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://arsen2010arsen.github.io/Gym-Logbook/" target="_blank" rel="noopener" class="btn btn-primary">
+              🏋️ Відкрити додаток онлайн
+            </a>
+            <a href="https://github.com/arsen2010arsen/Gym-Logbook" target="_blank" rel="noopener" class="btn btn-outline" title="Переглянути на GitHub">
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ROZKLAD KEP -->
+        <article class="project-card card-highlighted" data-category="bot" data-keywords="rozkladkep розклад коледж кеп парсинг студент пари заміни бот telegram python">
+          <div class="card-header">
+            <div class="card-icon-wrap icon-bot">📚</div>
+            <div class="card-badges">
+              <span class="badge badge-tg">Telegram-бот</span>
+              <span class="badge badge-private">🔒 Закритий код</span>
+            </div>
+          </div>
+          <h2 class="card-title">RozkladKEP Bot</h2>
+          <p class="card-desc">
+            Автоматизований Telegram-помічник для студентів коледжу (ВСП «ФКЕП ІФНТУНГ»). Парсить актуальний розклад занять, перевіряє заміни та відправляє оперативні сповіщення.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">aiogram</span>
+            <span class="tech-tag">Web Scraping</span>
+            <span class="tech-tag">Automation</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener" class="btn btn-primary btn-tg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              Запустити @rozkladKEPbot
+            </a>
+            <span class="private-note">🔒 Пропрієтарний код</span>
+          </div>
+        </article>
+
+        <!-- WEATHER SCRAPER BOT -->
+        <article class="project-card" data-category="bot" data-keywords="weather погода парсер sinoptik бот telegram python aiogram aiohttp render">
+          <div class="card-header">
+            <div class="card-icon-wrap icon-weather">🌦️</div>
+            <div class="card-badges">
+              <span class="badge badge-tg">Telegram-бот</span>
+              <span class="badge badge-muted">Open Source</span>
+            </div>
+          </div>
+          <h2 class="card-title">Weather Scraper Bot</h2>
+          <p class="card-desc">
+            Асинхронний бот для щоденного інформування про погоду в Івано-Франківську з sinoptik.ua. Включає вбудований aiohttp веб-сервер для цілодобового моніторингу аптайму на платформі Render.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python 3.10+</span>
+            <span class="tech-tag">aiogram v3</span>
+            <span class="tech-tag">aiohttp</span>
+            <span class="tech-tag">BeautifulSoup4</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener" class="btn btn-outline">
+              GitHub репозиторій ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- RUST DROPS -->
+        <article class="project-card" data-category="bot" data-keywords="rust twitch drops steam news бот telegram сповіщення ігри">
+          <div class="card-header">
+            <div class="card-icon-wrap icon-rust">🎮</div>
+            <div class="card-badges">
+              <span class="badge badge-tg">Telegram-бот</span>
+              <span class="badge badge-muted">Open Source</span>
+            </div>
+          </div>
+          <h2 class="card-title">Rust Twitch Drops & News</h2>
+          <p class="card-desc">
+            Цілодобовий моніторинг нових Twitch Drops для гри Rust та офіційних патчноутів зі Steam API з автоматичним надсиланням анонсів у канали чи особисті повідомлення.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Steam API</span>
+            <span class="tech-tag">Twitch Scraping</span>
+            <span class="tech-tag">aiogram</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/arsen2010arsen/RustDrops" target="_blank" rel="noopener" class="btn btn-outline">
+              GitHub репозиторій ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <p>🔍 Проєктів за цим запитом не знайдено.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-copy">© 2026 Арсеній · Студент & Розробник</p>
+        <p class="footer-sub">Розроблено як хаб для тестування PWA та ботів</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">✈️ Telegram @riccardomorphine</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">🐙 GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
