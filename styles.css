@@ -495,10 +495,9 @@ body {
 
 .footer-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
 }
 
 .footer-copy {
