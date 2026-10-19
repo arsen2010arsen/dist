@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark">
-  <title>Арсеній · Каталог проєктів & PWA</title>
-  <meta name="description" content="Каталог проєктів, веб-додатків PWA та Telegram-ботів Арсенія (@arsen2010arsen). Пряме тестування онлайн.">
+  <title>Arsenii · Каталог проєктів & PWA</title>
+  <meta name="description" content="Каталог проєктів, веб-додатків PWA та Telegram-ботів Arsenii (@arsen2010arsen). Пряме тестування онлайн.">
   <meta name="theme-color" content="#0b0f17">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,11 +41,11 @@
         <span>Каталог публічних та закритих розробок</span>
       </div>
       <h1 class="hero-title">
-        Проєкти, які можна <span class="gradient-text">протестувати в 1 клік</span>
+        Каталог проєктів та <span class="gradient-text">веб-розробок</span>
       </h1>
       <p class="hero-subtitle">
         Студентські розробки, практичні офлайн-ready PWA додатки та асинхронні Telegram-боти.
-        Тут можна одразу спробувати функціонал без встановлення стороннього софту.
+        Тут можна одразу ознайомитися з продуктами та протестувати їх онлайн.
       </p>
 
       <div class="stats-row">
@@ -56,6 +56,10 @@
         <div class="stat-card">
           <div class="stat-num">PWA</div>
           <div class="stat-label">Працюють у браузері & офлайн</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">MongoDB</div>
+          <div class="stat-label">Бази даних & хмарне API</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">100%</div>
@@ -76,19 +80,20 @@
         </div>
         <div class="search-box">
           <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" id="searchInput" placeholder="Пошук: ai, food, telegram, gym..." autocomplete="off">
+          <input type="text" id="searchInput" placeholder="Пошук: ai, food, telegram, mongodb..." autocomplete="off">
         </div>
       </div>
 
       <div class="projects-grid" id="projectsGrid">
 
         <!-- FOODTRACKER AI -->
-        <article class="project-card" data-category="pwa" data-keywords="foodtracker ai flutter dart firebase gemini калорії харчування їжа pwa">
+        <article class="project-card" data-category="pwa" data-keywords="foodtracker ai flutter dart firebase gemini mongodb калорії харчування їжа pwa">
           <div class="card-header">
             <div class="card-icon-wrap icon-food">🍎</div>
             <div class="card-badges">
               <span class="badge badge-accent">PWA Додаток</span>
               <span class="badge badge-purple">Gemini AI</span>
+              <span class="badge badge-private">🔒 Закритий код</span>
             </div>
           </div>
           <h2 class="card-title">FoodTracker AI</h2>
@@ -100,14 +105,13 @@
             <span class="tech-tag">Dart</span>
             <span class="tech-tag">Gemini API</span>
             <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">MongoDB</span>
           </div>
           <div class="card-actions">
             <a href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener" class="btn btn-primary">
               🚀 Відкрити PWA онлайн
             </a>
-            <a href="https://github.com/arsen2010arsen/FoodTracker" target="_blank" rel="noopener" class="btn btn-outline" title="Переглянути на GitHub">
-              GitHub ↗
-            </a>
+            <span class="private-note">🔒 Пропрієтарний код</span>
           </div>
         </article>
 
@@ -118,6 +122,7 @@
             <div class="card-badges">
               <span class="badge badge-accent">PWA Додаток</span>
               <span class="badge badge-blue">Zero-Telemetry</span>
+              <span class="badge badge-private">🔒 Закритий код</span>
             </div>
           </div>
           <h2 class="card-title">Gym Logbook</h2>
@@ -134,14 +139,12 @@
             <a href="https://arsen2010arsen.github.io/Gym-Logbook/" target="_blank" rel="noopener" class="btn btn-primary">
               🏋️ Відкрити додаток онлайн
             </a>
-            <a href="https://github.com/arsen2010arsen/Gym-Logbook" target="_blank" rel="noopener" class="btn btn-outline" title="Переглянути на GitHub">
-              GitHub ↗
-            </a>
+            <span class="private-note">🔒 Пропрієтарний код</span>
           </div>
         </article>
 
         <!-- ROZKLAD KEP -->
-        <article class="project-card card-highlighted" data-category="bot" data-keywords="rozkladkep розклад коледж кеп парсинг студент пари заміни бот telegram python">
+        <article class="project-card card-highlighted" data-category="bot" data-keywords="rozkladkep розклад коледж кеп парсинг студент пари заміни бот telegram python mongodb">
           <div class="card-header">
             <div class="card-icon-wrap icon-bot">📚</div>
             <div class="card-badges">
@@ -157,7 +160,7 @@
             <span class="tech-tag">Python</span>
             <span class="tech-tag">aiogram</span>
             <span class="tech-tag">Web Scraping</span>
-            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">MongoDB</span>
           </div>
           <div class="card-actions">
             <a href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener" class="btn btn-primary btn-tg">
@@ -232,7 +235,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <p class="footer-copy">© 2026 Арсеній · Студент & Розробник</p>
+        <p class="footer-copy">© Arsenii · Студент & Розробник</p>
         <p class="footer-sub">Розроблено як хаб для тестування PWA та ботів</p>
       </div>
       <div class="footer-links">
