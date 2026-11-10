@@ -62,30 +62,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle image load states (for smooth skeleton shimmer)
-  document.querySelectorAll('.card-shot img').forEach(img => {
+  document.querySelectorAll('.card-shot img, .gallery img, .prod-shot-btn img').forEach(img => {
+    const parent = img.parentElement;
     if (img.complete) {
-      img.parentElement.classList.add('loaded');
+      parent.classList.add('loaded');
     } else {
-      img.addEventListener('load', () => {
-        img.parentElement.classList.add('loaded');
-      });
-      img.addEventListener('error', () => {
-        img.parentElement.classList.add('loaded');
-      });
+      img.addEventListener('load', () => parent.classList.add('loaded'));
+      img.addEventListener('error', () => parent.classList.add('loaded'));
     }
   });
 
-  // Handle Screenshot Modal Preview
-  document.querySelectorAll('.card-shot').forEach(button => {
-    button.addEventListener('click', () => {
+  // Handle Screenshot Modal Preview (на сторінках проєктів та галереях)
+  document.querySelectorAll('button[data-shot], [data-shot]:not(a)').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (!shotModal || !shotImg) return;
       const shotUrl = button.dataset.shot;
-      const shotAlt = button.dataset.shotAlt || '';
+      const shotAlt = button.dataset.shotAlt || button.querySelector('img')?.alt || 'Скріншот';
       if (!shotUrl) return;
 
       shotImg.src = shotUrl;
       shotImg.alt = shotAlt;
       shotModal.showModal();
+    });
+  });
+
+  // Copy to clipboard support
+  document.querySelectorAll('button[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy;
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'скопійовано!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1500);
+      });
     });
   });
 

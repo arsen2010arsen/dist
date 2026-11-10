@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Google Tasks Widget — Настільний віджет задач для Windows (Rust/Tauri) · Arsenii</title>
+  <meta name="description" content="Ультралегкий настільний віджет для Google Tasks на базі Tauri 2 і Rust. Авторизація через Google OAuth2, робота офлайн, системний трей та миттєва синхронізація.">
+  <meta name="theme-color" content="#0c0c0e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../" class="brand">
+        <span class="brand-icon">▲</span>
+        <span>Arsenii <em style="font-style: normal; font-size: 0.85em; color: var(--accent); font-family: var(--font-mono);">· DIST</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../../#projects" class="nav-link">Каталог</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener" class="nav-link">GitHub ↗</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="nav-link">Telegram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ХЛІБНІ КРИХТИ -->
+      <nav class="crumbs" aria-label="Хлібні крихти">
+        <a href="../../">Головна</a>
+        <span aria-hidden="true">›</span>
+        <a href="../../#projects">Проєкти</a>
+        <span aria-hidden="true">›</span>
+        <span class="crumbs-cur">Google Tasks Widget</span>
+      </nav>
+
+      <!-- PROD HERO -->
+      <section class="prod-hero">
+        <div class="prod-hero-copy">
+          <p class="badge-line">Windows 10 / 11 · Desktop · Rust · Tauri v2</p>
+          <h1>Google Tasks Widget <span class="ver">v1.0.0</span></h1>
+          <p class="prod-sub">
+            Ультралегкий настільний віджет Google Tasks у витонченому стилі Glassmorphism / macOS. Миттєвий доступ до списків справ без відкриття браузера.
+          </p>
+          <div class="tags">
+            <span>Tauri 2</span><span>Rust</span><span>React 19</span><span>Google Tasks API</span><span>OAuth 2.0</span><span>Windows x64</span>
+          </div>
+          <div class="card-actions">
+            <div class="cmd">
+              <code>tauri-app.exe · v1.0.0</code>
+              <a class="copybtn" href="https://github.com/arsen2010arsen/google-tasks-widget/releases/latest" target="_blank" rel="noopener">завантажити</a>
+            </div>
+            <div class="links">
+              <a href="https://github.com/arsen2010arsen/google-tasks-widget" target="_blank" rel="noopener">Репозиторій на GitHub ↗</a>
+              <span class="mono">Open Source · MIT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-hero-shot">
+          <div class="frame">
+            <span class="frame-bar"><i></i><i></i><i></i><em>Google Tasks Widget · All Tasks</em></span>
+            <button class="prod-shot-btn" type="button" data-shot="../../shots/google-tasks-widget.png" aria-label="Збільшити скріншот Google Tasks Widget">
+              <img src="../../shots/google-tasks-widget.png" alt="Google Tasks Widget — список усіх завдань" decoding="async">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 / ГАЛЕРЕЯ -->
+      <section class="prod-sec" id="gallery">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">01 / Інтерфейс</p>
+          <h2>Знімки екрана</h2>
+        </div>
+        <div class="gallery">
+          <figure>
+            <button type="button" data-shot="../../shots/google-tasks-widget.png" aria-label="Список усіх завдань">
+              <img src="../../shots/google-tasks-widget.png" alt="Google Tasks Widget — список усіх завдань" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Всі завдання — швидкий перегляд та відмітка</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/google-tasks-starred.png" aria-label="Завдання із зірочкою">
+              <img src="../../shots/google-tasks-starred.png" alt="Google Tasks Widget — Starred Tasks" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Starred Tasks — обрані важливі завдання</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 02 / ПРО ПРОЄКТ -->
+      <section class="prod-sec" id="about">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">02 / Про проєкт</p>
+          <h2>Опис та призначення</h2>
+        </div>
+        <div class="prod-cols">
+          <div class="prod-prose">
+            <p>
+              <strong>Google Tasks Widget</strong> створений для тих, хто регулярно веде завдання в Google Екосистемі (Gmail, Google Calendar, Tasks), але не хоче постійно тримати окрему важку вкладку в Chrome або шукати потрібне вікно.
+            </p>
+            <p>
+              Завдяки платформі <strong>Tauri v2</strong> та ядру на <strong>Rust</strong>, застосунок використовує нативний рушій відображення ОС, споживаючи лише близько <strong>25–30 МБ оперативної пам'яті</strong> — це в 10 разів менше за типові Electron-додатки. Віджет ненав'язливо закріплюється на робочому столі, акуратно згортається в системний трей та підтримує гарячі клавіші.
+            </p>
+          </div>
+          <aside class="prod-facts">
+            <h3>Характеристики</h3>
+            <ul class="facts">
+              <li><b>Платформа</b><span>Windows 10 / 11 (x64)</span></li>
+              <li><b>Ядро</b><span>Rust + Tauri 2</span></li>
+              <li><b>Пам'ять</b><span>~25 MB RAM</span></li>
+              <li><b>Ліцензія</b><span>Open Source · MIT</span></li>
+              <li><b>Телеметрія</b><span>Нуль трекерів</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 03 / ЯК ПРАЦЮЄ -->
+      <section class="prod-sec" id="how">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">03 / Як працює</p>
+          <h2>Принцип роботи</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-num">01</span>
+            <h3>1-Клік Google Авторизація</h3>
+            <p>Безпечний вхід через офіційний OAuth 2.0 напряму в браузері. Токени зберігаються локально в захищеному сховищі.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">02</span>
+            <h3>Синхронізація списків</h3>
+            <p>Віджет завантажує ваші списки справ через офіційний Google Tasks API та оновлює статус у режимі реального часу.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">03</span>
+            <h3>Керування в 1 клік</h3>
+            <p>Створюйте нові завдання, призначайте дедлайни, додавайте в «Обрані» (зірочка) або завершуйте одним дотиком.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">04</span>
+            <h3>Робота у фоні та трей</h3>
+            <p>Віджет ховається в системний трей Windows, не заважає роботі і миттєво відкривається при натисканні гарячої клавіші.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 / МОЖЛИВОСТІ -->
+      <section class="prod-sec" id="features">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">04 / Можливості</p>
+          <h2>Ключові особливості</h2>
+        </div>
+        <ul class="feat-list">
+          <li>Ультранизьке споживання ресурсів (~25 МБ RAM проти 300+ МБ у веб-версії)</li>
+          <li>Підтримка фільтрації завдань: «Всі завдання» та «Зірочка» (Starred)</li>
+          <li>Перемикання між різними списками задач вашого Google-акаунту</li>
+          <li>Локальне кешування: завдання доступні для перегляду навіть без інтернету</li>
+          <li>Естетичний інтерфейс із темною темою та ефектом розмиття скла (Glassmorphism)</li>
+          <li>Інтеграція з системним треєм Windows та автозапуск при вході в систему</li>
+          <li>Повна приватність: софт спілкується виключно з серверами Google без проміжних бекендів</li>
+          <li>Відкритий вихідний код під вільною ліцензією MIT</li>
+        </ul>
+      </section>
+
+      <!-- 05 / ТЕХНОЛОГІЧНИЙ СТЕК -->
+      <section class="prod-sec" id="stack">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">05 / Архітектура</p>
+          <h2>Стек технологій</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <span class="stack-g">Нативне ядро</span>
+            <div class="tags"><span>Rust</span><span>Tauri v2</span><span>Windows WebView2</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Інтерфейс</span>
+            <div class="tags"><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Інтеграції</span>
+            <div class="tags"><span>Google Tasks API</span><span>Google Identity OAuth2</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Збірка та CI</span>
+            <div class="tags"><span>GitHub Actions</span><span>Cargo</span><span>MSI / EXE Installer</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 / ВСТАНОВЛЕННЯ ТА ЗАПУСК -->
+      <section class="prod-sec" id="install">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">06 / Запуск</p>
+          <h2>Як почати користуватись</h2>
+        </div>
+        <div class="prod-cols">
+          <div>
+            <div class="card-actions">
+              <div class="cmd">
+                <code>tauri-app.exe / setup.msi</code>
+                <a class="copybtn" href="https://github.com/arsen2010arsen/google-tasks-widget/releases/latest" target="_blank" rel="noopener">завантажити</a>
+              </div>
+            </div>
+            <p class="prod-note">Завантажте реліз, запустіть інсталятор або портативну версію та натисніть «Sign in with Google».</p>
+            <p class="prod-links">
+              <a href="https://github.com/arsen2010arsen/google-tasks-widget/releases" target="_blank" rel="noopener">Релізи на GitHub ↗</a>
+              <a href="https://github.com/arsen2010arsen/google-tasks-widget" target="_blank" rel="noopener">Вихідний код проєкту ↗</a>
+            </p>
+          </div>
+          <ul class="reqs">
+            <li>ОС: Windows 10 або Windows 11 (64-bit)</li>
+            <li>Microsoft Edge WebView2 Runtime (вбудовано в сучасні Windows)</li>
+            <li>Акаунт Google з активованою службою Google Tasks</li>
+            <li>Дозволи: лише базовий доступ до читання та редагування ваших завдань Tasks</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="prod-cta">
+        <div class="prod-cta-box">
+          <div>
+            <h2>Спробуйте Google Tasks Widget</h2>
+            <p>Безкоштовно, без сторонніх трекерів та з відкритим кодом.</p>
+          </div>
+          <div class="prod-cta-btns">
+            <a class="btn btn-primary" href="https://github.com/arsen2010arsen/google-tasks-widget/releases/latest" target="_blank" rel="noopener">Завантажити з GitHub ↗</a>
+            <a class="btn" href="../../#projects">← До всіх проєктів</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="../../#projects">Каталог проєктів</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCREENSHOT PREVIEW MODAL -->
+  <dialog class="modal modal--shot" id="shotModal" aria-label="Перегляд знімка">
+    <div class="modal-card">
+      <button class="modal-close" id="closeShotModal" type="button" aria-label="Закрити">✕</button>
+      <img id="shotImg" alt="">
+    </div>
+  </dialog>
+
+  <script src="../../script.js" defer></script>
+</body>
+</html>

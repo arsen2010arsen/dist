@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>RozkladKEP Bot — Telegram-бот розкладу занять для коледжу КЕП · Arsenii</title>
+  <meta name="description" content="RozkladKEP Bot — Telegram-бот розкладу пар, дзвінків та тижнів для студентів ВСП «ФКЕП ІФНТУНГ». Парсинг розкладу, кнопки вибору днів, підтримка скорочених дзвінків.">
+  <meta name="theme-color" content="#0c0c0e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../" class="brand">
+        <span class="brand-icon">▲</span>
+        <span>Arsenii <em style="font-style: normal; font-size: 0.85em; color: var(--accent); font-family: var(--font-mono);">· DIST</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../../#projects" class="nav-link">Каталог</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener" class="nav-link">GitHub ↗</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="nav-link">Telegram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ХЛІБНІ КРИХТИ -->
+      <nav class="crumbs" aria-label="Хлібні крихти">
+        <a href="../../">Головна</a>
+        <span aria-hidden="true">›</span>
+        <a href="../../#projects">Проєкти</a>
+        <span aria-hidden="true">›</span>
+        <span class="crumbs-cur">RozkladKEP Bot</span>
+      </nav>
+
+      <!-- PROD HERO -->
+      <section class="prod-hero">
+        <div class="prod-hero-copy">
+          <p class="badge-line" style="color: var(--emerald);">Telegram Bot · Python · aiogram 3 · Automation</p>
+          <h1>RozkladKEP Bot <span class="ver">v2.1</span></h1>
+          <p class="prod-sub">
+            Автоматизований Telegram-помічник для студентів коледжу (ВСП «ФКЕП ІФНТУНГ»). Допомагає переглядати розклад занять, кабінети, викладачів та графіки дзвінків у 1 клік.
+          </p>
+          <div class="tags">
+            <span>Python 3</span><span>aiogram 3</span><span>Web Scraping</span><span>Asyncio</span><span>MongoDB</span>
+          </div>
+          <div class="card-actions">
+            <div class="cmd">
+              <code>@rozkladKEPbot · Telegram</code>
+              <a class="copybtn" href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener">запустити</a>
+            </div>
+            <div class="links">
+              <span class="badge-private-pill">🔒 Закритий код</span>
+              <span class="mono">Telegram Bot · 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-hero-shot">
+          <div class="frame">
+            <span class="frame-bar"><i></i><i></i><i></i><em>RozkladKEP Bot · Розклад та кнопки керування</em></span>
+            <button class="prod-shot-btn" type="button" data-shot="../../shots/rozkladkep.png" aria-label="Збільшити скріншот RozkladKEP Bot">
+              <img src="../../shots/rozkladkep.png" alt="RozkladKEP Bot — інтерфейс у Telegram" decoding="async">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 / ГАЛЕРЕЯ -->
+      <section class="prod-sec" id="gallery">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">01 / Інтерфейс</p>
+          <h2>Знімки екрана</h2>
+        </div>
+        <div class="gallery">
+          <figure>
+            <button type="button" data-shot="../../shots/rozkladkep.png" aria-label="Повідомлення розкладу та клавіатура">
+              <img src="../../shots/rozkladkep.png" alt="RozkladKEP Bot — вибір днів та дзвінків" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Інтерфейс — розклад пар, вибір днів тижня, чисельник/знаменник і дзвінки</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 02 / ПРО ПРОЄКТ -->
+      <section class="prod-sec" id="about">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">02 / Про проєкт</p>
+          <h2>Опис та призначення</h2>
+        </div>
+        <div class="prod-cols">
+          <div class="prod-prose">
+            <p>
+              Розклад занять у коледжі регулярно змінюється через заміни, чергування пар, зміну тижнів (чисельник/знаменник) та введення скорочених дзвінків. Завантажувати щоразу великі файли таблиць або заходити на офіційний сайт під час перерви вкрай незручно.
+            </p>
+            <p>
+              <strong>RozkladKEP Bot</strong> створений для максимальної зручності студентів. Завдяки автоматичному парсингу та швидкому асинхронному рушію на базі <strong>aiogram 3</strong>, бот миттєво генерує актуальний розклад для потрібної групи з точним часом початку і кінця пари, аудиторією та ПІБ викладача.
+            </p>
+          </div>
+          <aside class="prod-facts">
+            <h3>Характеристики</h3>
+            <ul class="facts">
+              <li><b>Платформа</b><span>Telegram Messenger</span></li>
+              <li><b>Рушій</b><span>Python 3 · aiogram 3</span></li>
+              <li><b>Цільова група</b><span>Студенти та викладачі</span></li>
+              <li><b>Режим роботи</b><span>24/7 у хмарі</span></li>
+              <li><b>Код</b><span>Закритий (Private repo)</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 03 / ЯК ПРАЦЮЄ -->
+      <section class="prod-sec" id="how">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">03 / Як працює</p>
+          <h2>Принцип роботи</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-num">01</span>
+            <h3>Авторизація та вибір групи</h3>
+            <p>При першому запуску через команду /start ви обираєте свою академічну групу (наприклад, ПІ-25-01).</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">02</span>
+            <h3>Парсинг та кешування</h3>
+            <p>Сервер парсить свіжий розклад із бази закладу, нормалізує назви дисциплін, кабінети та заміни.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">03</span>
+            <h3>Інтерактивні Inline-кнопки</h3>
+            <p>Перемикайтеся між Понеділком, Вівторком, Середою чи Четвергом прямо в чаті без повторного введення команд.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">04</span>
+            <h3>Розклад дзвінків</h3>
+            <p>В один клік перемикайте розклад між звичайними парами (80 хвилин) та скороченими (60 хвилин).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 / МОЖЛИВОСТІ -->
+      <section class="prod-sec" id="features">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">04 / Можливості</p>
+          <h2>Ключові особливості</h2>
+        </div>
+        <ul class="feat-list">
+          <li>Швидка Inline-клавіатура для навігації по днях тижня</li>
+          <li>Автоматичний підрахунок поточного тижня навчання (1, 2, 3 або 4)</li>
+          <li>Перемикання повних (80 хв) та скорочених (60 хв) дзвінків</li>
+          <li>Повна інформація про пару: точний час, назва предмета, викладачі та кабінет/корпус</li>
+          <li>Кнопка швидкої зміни групи для студентів інших спеціальностей</li>
+          <li>Швидка реакція бота завдяки асинхронній архітектурі на базі Asyncio</li>
+        </ul>
+      </section>
+
+      <!-- 05 / ТЕХНОЛОГІЧНИЙ СТЕК -->
+      <section class="prod-sec" id="stack">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">05 / Архітектура</p>
+          <h2>Стек технологій</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <span class="stack-g">Мова та фреймворк</span>
+            <div class="tags"><span>Python 3.11</span><span>aiogram v3</span><span>Asyncio</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Парсинг даних</span>
+            <div class="tags"><span>BeautifulSoup4</span><span>HTTPX</span><span>Regex</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">База користувачів</span>
+            <div class="tags"><span>MongoDB</span><span>Motor Async</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Інфраструктура</span>
+            <div class="tags"><span>Linux Server</span><span>systemd</span><span>Webhook / Polling</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 / ВСТАНОВЛЕННЯ ТА ЗАПУСК -->
+      <section class="prod-sec" id="install">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">06 / Запуск</p>
+          <h2>Як почати користуватись</h2>
+        </div>
+        <div class="prod-cols">
+          <div>
+            <div class="card-actions">
+              <div class="cmd">
+                <code>https://t.me/rozkladKEPbot</code>
+                <a class="copybtn" href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener">запустити</a>
+              </div>
+            </div>
+            <p class="prod-note">Перейдіть за посиланням або знайдіть бота у пошуку Telegram за юзернеймом @rozkladKEPbot.</p>
+            <p class="prod-links">
+              <a href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener">Відкрити в Telegram ↗</a>
+              <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Зв'язатися з автором ↗</a>
+            </p>
+          </div>
+          <ul class="reqs">
+            <li>Працює на будь-якому пристрої, де встановлено Telegram (телефон, планшет, ПК)</li>
+            <li>Не потребує завантаження сторонніх додатків</li>
+            <li>Миттєвий відгук 24 години на добу</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="prod-cta">
+        <div class="prod-cta-box">
+          <div>
+            <h2>Дізнайтесь розклад у свого бота</h2>
+            <p>Більше жодних плутанин із кабінетами, дзвінками та чисельниками.</p>
+          </div>
+          <div class="prod-cta-btns">
+            <a class="btn btn-primary" href="https://t.me/rozkladKEPbot" target="_blank" rel="noopener">Запустити бота в Telegram ↗</a>
+            <a class="btn" href="../../#projects">← До всіх проєктів</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="../../#projects">Каталог проєктів</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCREENSHOT PREVIEW MODAL -->
+  <dialog class="modal modal--shot" id="shotModal" aria-label="Перегляд знімка">
+    <div class="modal-card">
+      <button class="modal-close" id="closeShotModal" type="button" aria-label="Закрити">✕</button>
+      <img id="shotImg" alt="">
+    </div>
+  </dialog>
+
+  <script src="../../script.js" defer></script>
+</body>
+</html>

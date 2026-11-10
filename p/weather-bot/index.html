@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Weather Scraper Bot — Асинхронний бот моніторингу погоди для Telegram · Arsenii</title>
+  <meta name="description" content="Weather Scraper Bot — асинхронний Telegram-бот для парсингу та відправки погоди з sinoptik.ua. Вбудований aiohttp веб-сервер для 24/7 аптайму на Render.">
+  <meta name="theme-color" content="#0c0c0e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../" class="brand">
+        <span class="brand-icon">▲</span>
+        <span>Arsenii <em style="font-style: normal; font-size: 0.85em; color: var(--accent); font-family: var(--font-mono);">· DIST</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../../#projects" class="nav-link">Каталог</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener" class="nav-link">GitHub ↗</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="nav-link">Telegram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ХЛІБНІ КРИХТИ -->
+      <nav class="crumbs" aria-label="Хлібні крихти">
+        <a href="../../">Головна</a>
+        <span aria-hidden="true">›</span>
+        <a href="../../#projects">Проєкти</a>
+        <span aria-hidden="true">›</span>
+        <span class="crumbs-cur">Weather Scraper Bot</span>
+      </nav>
+
+      <!-- PROD HERO -->
+      <section class="prod-hero">
+        <div class="prod-hero-copy">
+          <p class="badge-line" style="color: var(--emerald);">Telegram Bot · Python 3 · Open Source · Render</p>
+          <h1>Weather Scraper Bot <span class="ver">v1.1</span></h1>
+          <p class="prod-sub">
+            Асинхронний бот моніторингу погоди для Івано-Франківська. Парсинг sinoptik.ua, регулярні сповіщення о 15:00 та вбудований веб-сервер aiohttp для забезпечення цілодобового аптайму на Render.
+          </p>
+          <div class="tags">
+            <span>Python 3.10+</span><span>aiogram v3</span><span>aiohttp</span><span>BeautifulSoup4</span><span>APScheduler</span>
+          </div>
+          <div class="card-actions">
+            <div class="cmd">
+              <code>github.com/arsen2010arsen/weather-bot</code>
+              <a class="copybtn" href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener">репозиторій</a>
+            </div>
+            <div class="links">
+              <a href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener">GitHub ↗</a>
+              <span class="mono">Open Source · MIT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-hero-shot">
+          <div class="frame">
+            <span class="frame-bar"><i></i><i></i><i></i><em>Weather Bot · Сповіщення погоди</em></span>
+            <button class="prod-shot-btn" type="button" data-shot="../../shots/weather-bot.png" aria-label="Збільшити сповіщення Weather Bot">
+              <img src="../../shots/weather-bot.png" alt="Weather Bot — погодні сповіщення в Telegram" class="contain" decoding="async">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 / ГАЛЕРЕЯ -->
+      <section class="prod-sec" id="gallery">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">01 / Інтерфейс</p>
+          <h2>Знімки екрана</h2>
+        </div>
+        <div class="gallery">
+          <figure>
+            <button type="button" data-shot="../../shots/weather-bot.png" aria-label="Приклад погодного звіту">
+              <img src="../../shots/weather-bot.png" alt="Weather Scraper Bot — сповіщення про температуру та вітер" class="contain" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Формат повідомлення — дата, час, температура, хмарність та вітер</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 02 / ПРО ПРОЄКТ -->
+      <section class="prod-sec" id="about">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">02 / Про проєкт</p>
+          <h2>Опис та призначення</h2>
+        </div>
+        <div class="prod-cols">
+          <div class="prod-prose">
+            <p>
+              <strong>Weather Scraper Bot</strong> автоматизує збір метеорологічних даних без потреби у платних ключах API. Бот напряму парсить показники з sinoptik.ua, відбираючи температуру, опис хмарності, швидкість та напрямок вітру.
+            </p>
+            <p>
+              Особливістю архітектури є поєднання <strong>aiogram v3</strong>, планувальника <strong>APScheduler</strong> та вбудованого мікросервера <strong>aiohttp</strong>. Веб-сервер відповідає на пінги зовнішніх систем моніторингу (UptimeRobot тощо), що дозволяє безкоштовно хостити бота на платформі Render без переходу в «сплячий режим».
+            </p>
+          </div>
+          <aside class="prod-facts">
+            <h3>Характеристики</h3>
+            <ul class="facts">
+              <li><b>Платформа</b><span>Telegram + Render Cloud</span></li>
+              <li><b>Парсинг</b><span>BeautifulSoup4 + lxml</span></li>
+              <li><b>Сервер</b><span>aiohttp (healthcheck)</span></li>
+              <li><b>Планувальник</b><span>APScheduler</span></li>
+              <li><b>Ліцензія</b><span>Open Source · MIT</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 03 / ЯК ПРАЦЮЄ -->
+      <section class="prod-sec" id="how">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">03 / Як працює</p>
+          <h2>Принцип роботи</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-num">01</span>
+            <h3>Асинхронний скрапінг</h3>
+            <p>Бот завантажує актуальну сторінку прогнозу погоди та парсить блок метеоданих для міста.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">02</span>
+            <h3>Фільтрація та валідація</h3>
+            <p>Очищення HTML-тегів, форматування температурних позначок та стрілок напрямку вітру.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">03</span>
+            <h3>Розсилка за розкладом</h3>
+            <p>Планувальник завдань APScheduler генерує та надсилає красиве пуш-повідомлення щодня о 15:00.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">04</span>
+            <h3>Підтримка аптайму</h3>
+            <p>Вбудований порт HTTP aiohttp слухає пінги сервера, забезпечуючи 99.9% доступності бота.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 / МОЖЛИВОСТІ -->
+      <section class="prod-sec" id="features">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">04 / Можливості</p>
+          <h2>Ключові особливості</h2>
+        </div>
+        <ul class="feat-list">
+          <li>Повна автономність — робота без комерційних погодних API-ключів</li>
+          <li>Компактний та наочний формат повідомлень з емодзі</li>
+          <li>Точний прогноз температури, хмарності та вітрових поривів</li>
+          <li>Вбудований фоновий HTTP-сервер для Uptime-пінгів на хмарних хостингах</li>
+          <li>Чистий модульний Python-код із повною асинхронністю</li>
+          <li>Легке налаштування для будь-якого міста через змінні середовища</li>
+        </ul>
+      </section>
+
+      <!-- 05 / ТЕХНОЛОГІЧНИЙ СТЕК -->
+      <section class="prod-sec" id="stack">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">05 / Архітектура</p>
+          <h2>Стек технологій</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <span class="stack-g">Мова та бот</span>
+            <div class="tags"><span>Python 3.10+</span><span>aiogram v3</span><span>Telegram Bot API</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Скрапінг</span>
+            <div class="tags"><span>BeautifulSoup4</span><span>lxml</span><span>Requests / aiohttp</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Сервер &amp; Аптайм</span>
+            <div class="tags"><span>aiohttp Server</span><span>Render Web Service</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Планувальник</span>
+            <div class="tags"><span>APScheduler</span><span>Cron Jobs</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 / ВСТАНОВЛЕННЯ ТА ЗАПУСК -->
+      <section class="prod-sec" id="install">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">06 / Запуск</p>
+          <h2>Як почати користуватись</h2>
+        </div>
+        <div class="prod-cols">
+          <div>
+            <div class="card-actions">
+              <div class="cmd">
+                <code>git clone github.com/arsen2010arsen/weather-bot</code>
+                <a class="copybtn" href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener">код на GitHub</a>
+              </div>
+            </div>
+            <p class="prod-note">Клонуйте репозиторій, додайте токен бота у файл .env та запустіть `python main.py` або задеплойте на Render.</p>
+            <p class="prod-links">
+              <a href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener">Репозиторій на GitHub ↗</a>
+              <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Зв'язатися з автором ↗</a>
+            </p>
+          </div>
+          <ul class="reqs">
+            <li>Python 3.10 або новіший</li>
+            <li>Токен бота від @BotFather</li>
+            <li>Встановлення залежностей: `pip install -r requirements.txt`</li>
+            <li>Хостинг: локально або Render / Railway / VPS</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="prod-cta">
+        <div class="prod-cta-box">
+          <div>
+            <h2>Перегляньте код Weather Scraper Bot</h2>
+            <p>Проєкт є повністю відкритим та доступним для вивчення на GitHub.</p>
+          </div>
+          <div class="prod-cta-btns">
+            <a class="btn btn-primary" href="https://github.com/arsen2010arsen/weather-bot" target="_blank" rel="noopener">Відкрити репозиторій ↗</a>
+            <a class="btn" href="../../#projects">← До всіх проєктів</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="../../#projects">Каталог проєктів</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCREENSHOT PREVIEW MODAL -->
+  <dialog class="modal modal--shot" id="shotModal" aria-label="Перегляд знімка">
+    <div class="modal-card">
+      <button class="modal-close" id="closeShotModal" type="button" aria-label="Закрити">✕</button>
+      <img id="shotImg" alt="">
+    </div>
+  </dialog>
+
+  <script src="../../script.js" defer></script>
+</body>
+</html>

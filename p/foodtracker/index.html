@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>FoodTracker AI — Розумний щоденник харчування з розпізнаванням їжі через Gemini AI · Arsenii</title>
+  <meta name="description" content="FoodTracker AI — сучасний PWA-щоденник харчування. Сканування страв за фото з ШІ Gemini, автоматичний підрахунок калорій, білків, жирів і вуглеводів, робота офлайн.">
+  <meta name="theme-color" content="#0c0c0e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../" class="brand">
+        <span class="brand-icon">▲</span>
+        <span>Arsenii <em style="font-style: normal; font-size: 0.85em; color: var(--accent); font-family: var(--font-mono);">· DIST</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="../../#projects" class="nav-link">Каталог</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener" class="nav-link">GitHub ↗</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="nav-link">Telegram ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ХЛІБНІ КРИХТИ -->
+      <nav class="crumbs" aria-label="Хлібні крихти">
+        <a href="../../">Головна</a>
+        <span aria-hidden="true">›</span>
+        <a href="../../#projects">Проєкти</a>
+        <span aria-hidden="true">›</span>
+        <span class="crumbs-cur">FoodTracker AI</span>
+      </nav>
+
+      <!-- PROD HERO -->
+      <section class="prod-hero">
+        <div class="prod-hero-copy">
+          <p class="badge-line" style="color: var(--violet);">Web · PWA · Google Gemini AI · КБЖВ</p>
+          <h1>FoodTracker AI <span class="ver">v1.2</span></h1>
+          <p class="prod-sub">
+            Автоматизований щоденник харчування з розпізнаванням їжі за фото за допомогою нейромережі Google Gemini. Персональний розрахунок добових калорій та встановлення як PWA на будь-який пристрій.
+          </p>
+          <div class="tags">
+            <span>Flutter</span><span>Dart</span><span>Gemini AI</span><span>Firebase</span><span>MongoDB</span><span>PWA</span>
+          </div>
+          <div class="card-actions">
+            <div class="cmd">
+              <code>arsen2010arsen.github.io/FoodTracker/</code>
+              <a class="copybtn" href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener">відкрити</a>
+            </div>
+            <div class="links">
+              <span class="badge-private-pill">🔒 Закритий код</span>
+              <span class="mono">PWA · Офлайн</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-hero-shot">
+          <div class="frame">
+            <span class="frame-bar"><i></i><i></i><i></i><em>FoodTracker AI · Головний екран калорій</em></span>
+            <button class="prod-shot-btn" type="button" data-shot="../../shots/foodtracker.png" aria-label="Збільшити головний екран FoodTracker AI">
+              <img src="../../shots/foodtracker.png" alt="FoodTracker AI — кругова діаграма калорій та макронутрієнти" decoding="async">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 / ГАЛЕРЕЯ -->
+      <section class="prod-sec" id="gallery">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">01 / Інтерфейс</p>
+          <h2>Знімки екрана</h2>
+        </div>
+        <div class="gallery">
+          <figure>
+            <button type="button" data-shot="../../shots/foodtracker.png" aria-label="Головний дашборд калорій">
+              <img src="../../shots/foodtracker.png" alt="Головний дашборд калорій та КБЖВ" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Дашборд — залишок норми, білки, жири, вуглеводи</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/foodtracker-empty.png" aria-label="Стрічка прийомів їжі">
+              <img src="../../shots/foodtracker-empty.png" alt="Стрічка прийомів їжі та сканування" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Прийоми їжі — швидкий перехід до сканування</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/foodtracker-setup.png" aria-label="Онбординг параметрів тіла">
+              <img src="../../shots/foodtracker-setup.png" alt="Онбординг та параметри тіла" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Налаштування — стать, вік, зріст і вага</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/foodtracker-goal.png" aria-label="Вибір цілі">
+              <img src="../../shots/foodtracker-goal.png" alt="Вибір цілі харчування" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Персональна ціль — підтримка ваги, набір або дефіцит</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/foodtracker-menu.png" aria-label="Меню профілю">
+              <img src="../../shots/foodtracker-menu.png" alt="Меню профілю та очищення історії" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Профіль — зміна даних, очищення історії та вихід</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 02 / ПРО ПРОЄКТ -->
+      <section class="prod-sec" id="about">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">02 / Про проєкт</p>
+          <h2>Опис та призначення</h2>
+        </div>
+        <div class="prod-cols">
+          <div class="prod-prose">
+            <p>
+              <strong>FoodTracker AI</strong> вирішує головну проблему класичних додатків підрахунку калорій — втомливий ручний пошук кожного окремого продукту у базі даних та зважування до грама.
+            </p>
+            <p>
+              Завдяки інтеграції <strong>Google Gemini AI Vision</strong>, застосунок аналізує візуальні ознаки страви на фотографії, самостійно розпізнає ключові компоненти, оцінює приблизну масу та повертає структуровані дані щодо калорійності, білків, жирів і вуглеводів. Проєкт реалізовано як автономний прогресивний веб-застосунок (PWA), що встановлюється на iPhone або Android в один дотик.
+            </p>
+          </div>
+          <aside class="prod-facts">
+            <h3>Характеристики</h3>
+            <ul class="facts">
+              <li><b>Платформа</b><span>Web · PWA (iOS / Android / PC)</span></li>
+              <li><b>AI-модель</b><span>Google Gemini AI</span></li>
+              <li><b>Авторизація</b><span>Firebase Auth</span></li>
+              <li><b>База даних</b><span>MongoDB Cloud</span></li>
+              <li><b>Код</b><span>Закритий (Private repo)</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 03 / ЯК ПРАЦЮЄ -->
+      <section class="prod-sec" id="how">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">03 / Як працює</p>
+          <h2>Принцип роботи</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-num">01</span>
+            <h3>Розрахунок персональної норми</h3>
+            <p>При першому запуску ви вказуєте параметри тіла та мету — система за формулою Харріса-Бенедикта рахує калорії.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">02</span>
+            <h3>Фото або сканування страви</h3>
+            <p>Натисніть кнопку «Сканувати страву» та сфотографуйте тарілку з їжею прямо з камери смартфона.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">03</span>
+            <h3>ШІ-аналіз через Gemini</h3>
+            <p>Нейромережа визначає назву страви, інгредієнти та миттєво підраховує КБЖВ (калорії, білки, жири, вуглеводи).</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">04</span>
+            <h3>Контроль балансу щодня</h3>
+            <p>Прогрес-бари показують залишок денної норми по кожному показнику, допомагаючи тримати форму без зривів.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 / МОЖЛИВОСТІ -->
+      <section class="prod-sec" id="features">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">04 / Можливості</p>
+          <h2>Ключові особливості</h2>
+        </div>
+        <ul class="feat-list">
+          <li>ШІ-розпізнавання страв з високою точністю за допомогою Gemini Vision</li>
+          <li>Миттєве відображення КБЖВ: білки (смарагдовий), вуглеводи (жовтий), жири (рожевий)</li>
+          <li>Інтерактивний онбординг для введення віку, статі, зросту, ваги та рівня активності</li>
+          <li>Гнучкі цілі: схуднення (дефіцит), підтримка маси, набір м'язової маси (профіцит)</li>
+          <li>Встановлення як PWA на екран смартфона без потреби в Google Play чи App Store</li>
+          <li>Автономне кешування з можливістю переглядати попередні дні офлайн</li>
+          <li>Безпечне зберігання історії страв у хмарній базі даних</li>
+          <li>Зручне бічне меню з можливістю скинути профіль чи очистити історію</li>
+        </ul>
+      </section>
+
+      <!-- 05 / ТЕХНОЛОГІЧНИЙ СТЕК -->
+      <section class="prod-sec" id="stack">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">05 / Архітектура</p>
+          <h2>Стек технологій</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <span class="stack-g">Клієнт</span>
+            <div class="tags"><span>Flutter Web</span><span>Dart</span><span>PWA Service Worker</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Штучний інтелект</span>
+            <div class="tags"><span>Google Gemini API</span><span>Vision Prompt Engineering</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Автентифікація &amp; Хмара</span>
+            <div class="tags"><span>Firebase Auth</span><span>MongoDB Cloud</span></div>
+          </div>
+          <div class="stack-card">
+            <span class="stack-g">Хостинг</span>
+            <div class="tags"><span>GitHub Pages</span><span>HTTPS</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 / ВСТАНОВЛЕННЯ ТА ЗАПУСК -->
+      <section class="prod-sec" id="install">
+        <div class="prod-sec-head">
+          <p class="sec-eyebrow">06 / Запуск</p>
+          <h2>Як почати користуватись</h2>
+        </div>
+        <div class="prod-cols">
+          <div>
+            <div class="card-actions">
+              <div class="cmd">
+                <code>https://arsen2010arsen.github.io/FoodTracker/</code>
+                <a class="copybtn" href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener">відкрити</a>
+              </div>
+            </div>
+            <p class="prod-note">Відкрийте посилання у Safari (iOS) або Chrome (Android) та натисніть «Додати на головний екран».</p>
+            <p class="prod-links">
+              <a href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener">Запустити застосунок онлайн ↗</a>
+              <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Зв'язатися з автором ↗</a>
+            </p>
+          </div>
+          <ul class="reqs">
+            <li>Працює в будь-якому сучасному браузері (Chrome, Safari, Edge, Firefox)</li>
+            <li>Не потребує завантаження важких APK або додатків зі сторів</li>
+            <li>Потрібен доступ до камери пристрою для сканування їжі</li>
+            <li>Репозиторій закритий (Private), але застосунок публічно доступний для тестування</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="prod-cta">
+        <div class="prod-cta-box">
+          <div>
+            <h2>Спробуйте FoodTracker AI прямо зараз</h2>
+            <p>Відкрийте застосунок у телефоні та скануйте свій сьогоднішній обід за кілька секунд.</p>
+          </div>
+          <div class="prod-cta-btns">
+            <a class="btn btn-primary" href="https://arsen2010arsen.github.io/FoodTracker/" target="_blank" rel="noopener">Відкрити застосунок ↗</a>
+            <a class="btn" href="../../#projects">← До всіх проєктів</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="../../#projects">Каталог проєктів</a>
+        <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCREENSHOT PREVIEW MODAL -->
+  <dialog class="modal modal--shot" id="shotModal" aria-label="Перегляд знімка">
+    <div class="modal-card">
+      <button class="modal-close" id="closeShotModal" type="button" aria-label="Закрити">✕</button>
+      <img id="shotImg" alt="">
+    </div>
+  </dialog>
+
+  <script src="../../script.js" defer></script>
+</body>
+</html>
