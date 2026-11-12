@@ -24,6 +24,7 @@
       </a>
       <nav class="nav-links">
         <a href="#projects">Проєкти</a>
+        <a href="#about">Про підхід</a>
         <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
@@ -148,21 +149,21 @@
         </article>
 
         <!-- GYM LOGBOOK -->
-        <article class="card" data-cat="web" data-search="gym logbook тренування зал спорт вправи ваги localstorage pwa javascript">
+        <article class="card" data-cat="web" data-search="gym logbook тренування зал спорт вправи ваги localstorage pwa javascript план спліт альтернатива">
           <a class="card-shot card-shot--open" href="./p/gym-logbook/" aria-label="Детальніше: Gym Logbook">
             <img src="./shots/gym-logbook.png" alt="Gym Logbook" loading="lazy" decoding="async">
           </a>
           <div class="card-body">
             <div class="card-head">
-              <h3><a href="./p/gym-logbook/">Gym Logbook</a> <span class="ver">v1.0</span></h3>
+              <h3><a href="./p/gym-logbook/">Gym Logbook</a> <span class="ver">v2.0</span></h3>
               <span class="cat">Web &amp; PWA · Local-first</span>
             </div>
-            <p class="card-sub">Цифровий журнал силових тренувань</p>
+            <p class="card-sub">Журнал тренувань із планами та альтернативами</p>
             <p class="card-desc">
-              Zero friction — запис підходу займає лічені секунди. 100% даних зберігаються виключно в LocalStorage браузера без сторонніх серверів чи реклами.
+              Спліти (Тренування А/В), вкладка «План», вибір запасних вправ при зайнятому тренажері та глобальне перейменування з оновленням історії. 100% офлайн у LocalStorage.
             </p>
             <div class="tags">
-              <span>Vanilla JS</span><span>CSS3 Dark</span><span>LocalStorage</span><span>PWA</span><span>Zero-Telemetry</span>
+              <span>Vanilla JS</span><span>CSS3 Dark</span><span>LocalStorage</span><span>PWA</span><span>Workout Splits</span>
             </div>
             <div class="card-actions">
               <div class="cmd">
@@ -245,10 +246,70 @@
     </div>
   </section>
 
+  <!-- ABOUT & PRINCIPLES SECTION -->
+  <section class="section-about" id="about">
+    <div class="container">
+      <div class="prod-sec-head">
+        <p class="sec-eyebrow">Підхід до розробки</p>
+        <h2>Легковажність, автономність та практична користь</h2>
+      </div>
+
+      <div class="principles-grid">
+        <div class="how-step">
+          <span class="how-num">01 · LOCAL-FIRST</span>
+          <h3>Без трекерів та зайвого шуму</h3>
+          <p>PWA-інструменти працюють автономно в браузері (LocalStorage + Service Worker), без реклами, платних підписок і передачі даних третім особам.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">02 · PERFORMANCE</span>
+          <h3>Нативна швидкодія</h3>
+          <p>Десктопні утиліти на Rust та Tauri v2 споживають мінімум оперативної пам'яті (~25 МБ RAM) і миттєво відкриваються прямо з системного трею.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">03 · LIVE TESTING</span>
+          <h3>Прозорий доступ до релізів</h3>
+          <p>Незалежно від того, чи відкритий вихідний код на GitHub, чи репозиторій закритий — кожен проєкт має робочий білд або веб-версію для тестування.</p>
+        </div>
+      </div>
+
+      <div class="stack-strip">
+        <span class="stack-strip-label">Основний стек</span>
+        <div class="tags">
+          <span>Rust</span>
+          <span>Tauri 2</span>
+          <span>Python 3</span>
+          <span>aiogram v3</span>
+          <span>Flutter / Dart</span>
+          <span>React 19</span>
+          <span>Vanilla JS</span>
+          <span>Google Gemini AI</span>
+          <span>MongoDB</span>
+          <span>Firebase</span>
+          <span>PWA / Service Worker</span>
+        </div>
+      </div>
+
+      <div class="home-cta">
+        <div class="prod-cta-box">
+          <div>
+            <h2>Маєте ідею або знайшли баг?</h2>
+            <p>Напишіть напряму у Telegram або перегляньте інші репозиторії в профілі GitHub.</p>
+          </div>
+          <div class="prod-cta-btns">
+            <a class="btn btn-primary" href="https://t.me/riccardomorphine" target="_blank" rel="noopener">Написати в Telegram ↗</a>
+            <a class="btn" href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">Профіль GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
+      <p class="footer-note">Arsenii · DIST Hub · Без cookies та сторонньої аналітики</p>
       <div class="footer-links">
+        <a href="#projects">Каталог</a>
         <a href="https://t.me/riccardomorphine" target="_blank" rel="noopener">✈️ Telegram @riccardomorphine</a>
         <a href="https://github.com/arsen2010arsen" target="_blank" rel="noopener">🐙 GitHub</a>
       </div>

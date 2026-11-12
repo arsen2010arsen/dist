@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark">
-  <title>Gym Logbook — Цифровий журнал силових тренувань (PWA / Offline) · Arsenii</title>
-  <meta name="description" content="Gym Logbook — мінімалістичний PWA-журнал тренувань для залу. Запис підходів і робочих ваг за лічені секунди, 100% офлайн, без реклами та підписок.">
+  <title>Gym Logbook v2.0 — Цифровий журнал силових тренувань (PWA / Offline) · Arsenii</title>
+  <meta name="description" content="Gym Logbook v2.0 — оновлений PWA-журнал тренувань: власні плани та спліти, альтернативні вправи для зайнятих тренажерів, глобальна історія та 100% робота офлайн.">
   <meta name="theme-color" content="#0c0c0e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,12 +46,12 @@
       <section class="prod-hero">
         <div class="prod-hero-copy">
           <p class="badge-line" style="color: var(--violet);">Web · PWA · Local-First · Zero-Telemetry</p>
-          <h1>Gym Logbook <span class="ver">v1.0</span></h1>
+          <h1>Gym Logbook <span class="ver">v2.0</span></h1>
           <p class="prod-sub">
-            Цифровий журнал силових тренувань. Жодного візуального сміття, реєстрацій чи реклами — запис робочої ваги та підходу займає менше 3 секунд.
+            Оновлений цифровий журнал силових тренувань зі сплітами, конструктором планів та альтернативними вправами на випадок зайнятого тренажера. Запис підходів за секунди, 100% офлайн.
           </p>
           <div class="tags">
-            <span>Vanilla JS</span><span>CSS3 Dark</span><span>LocalStorage</span><span>PWA</span><span>Offline-First</span>
+            <span>Vanilla JS</span><span>CSS3 Dark</span><span>LocalStorage</span><span>PWA</span><span>Offline-First</span><span>Workout Splits</span>
           </div>
           <div class="card-actions">
             <div class="cmd">
@@ -67,9 +67,9 @@
 
         <div class="prod-hero-shot">
           <div class="frame">
-            <span class="frame-bar"><i></i><i></i><i></i><em>Gym Logbook · Екран тренування</em></span>
+            <span class="frame-bar"><i></i><i></i><i></i><em>Gym Logbook v2.0 · Екран тренування</em></span>
             <button class="prod-shot-btn" type="button" data-shot="../../shots/gym-logbook.png" aria-label="Збільшити екран тренування Gym Logbook">
-              <img src="../../shots/gym-logbook.png" alt="Gym Logbook — додавання підходу" decoding="async">
+              <img src="../../shots/gym-logbook.png" alt="Gym Logbook — вкладка тренування зі сплітами та кнопкою Нова сесія" decoding="async">
             </button>
           </div>
         </div>
@@ -79,26 +79,38 @@
       <section class="prod-sec" id="gallery">
         <div class="prod-sec-head">
           <p class="sec-eyebrow">01 / Інтерфейс</p>
-          <h2>Знімки екрана</h2>
+          <h2>Знімки екрана (оновлення v2.0)</h2>
         </div>
         <div class="gallery">
           <figure>
             <button type="button" data-shot="../../shots/gym-logbook.png" aria-label="Екран запису тренування">
-              <img src="../../shots/gym-logbook.png" alt="Gym Logbook — поточне тренування" loading="lazy" decoding="async">
+              <img src="../../shots/gym-logbook.png" alt="Gym Logbook — Тренування А та створення програм" loading="lazy" decoding="async">
             </button>
-            <figcaption>Тренування — вибір вправи та фіксація підходу</figcaption>
+            <figcaption>Тренування — перемикання сплітів та «Нова сесія ↻»</figcaption>
           </figure>
           <figure>
-            <button type="button" data-shot="../../shots/gym-logbook-exercises.png" aria-label="Каталог вправ">
-              <img src="../../shots/gym-logbook-exercises.png" alt="Gym Logbook — створення вправи" loading="lazy" decoding="async">
+            <button type="button" data-shot="../../shots/gym-logbook-add.png" aria-label="Додавання вправи та альтернативи">
+              <img src="../../shots/gym-logbook-add.png" alt="Gym Logbook — модальне вікно додавання вправи з альтернативою" loading="lazy" decoding="async">
             </button>
-            <figcaption>Вправи — формування персональної програми</figcaption>
+            <figcaption>Додавання вправи — швидкий вибір та запасна альтернатива</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/gym-logbook-plan.png" aria-label="Вкладка План та налаштування тренувань">
+              <img src="../../shots/gym-logbook-plan.png" alt="Gym Logbook — вкладка План" loading="lazy" decoding="async">
+            </button>
+            <figcaption>План — створення сплітів, порядок та налаштування</figcaption>
+          </figure>
+          <figure>
+            <button type="button" data-shot="../../shots/gym-logbook-exercises.png" aria-label="Усі збережені вправи">
+              <img src="../../shots/gym-logbook-exercises.png" alt="Gym Logbook — список збережених вправ" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Збережені вправи — перейменування з оновленням історії</figcaption>
           </figure>
           <figure>
             <button type="button" data-shot="../../shots/gym-logbook-history.png" aria-label="Журнал історії">
-              <img src="../../shots/gym-logbook-history.png" alt="Gym Logbook — журнал історії" loading="lazy" decoding="async">
+              <img src="../../shots/gym-logbook-history.png" alt="Gym Logbook — журнал історії та прогресу" loading="lazy" decoding="async">
             </button>
-            <figcaption>Історія — динаміка результатів по днях</figcaption>
+            <figcaption>Історія — перегляд прогресу та журнал підходів</figcaption>
           </figure>
         </div>
       </section>
@@ -112,15 +124,16 @@
         <div class="prod-cols">
           <div class="prod-prose">
             <p>
-              Більшість комерційних фітнес-застосунків перевантажені платними планами, трекерами активності, рекламою та обов'язковою реєстрацією, що сильно дратує безпосередньо під час тренування у тренажерному залі.
+              <strong>Gym Logbook</strong> — це автономний журнал тренувань із філософією <em>«zero-friction»</em>: жодних реєстрацій, платних підписок чи реклами, які заважають у залі. Усе працює миттєво, а дані зберігаються виключно у <code>LocalStorage</code> вашого пристрою без передачі на сторонні сервери.
             </p>
             <p>
-              <strong>Gym Logbook</strong> створено з філософією <em>«zero-friction»</em>: ви відкриваєте застосунок, обираєте вправу, тиснете одну кнопку для збереження ваги й продовжуєте відпочивати. Застосунок не надсилає жодних даних у мережу — все зберігається у захищеному LocalStorage вашого браузера та працює без інтернет-з'єднання.
+              В оновленні <strong>v2.0</strong> застосунок отримав повноцінний конструктор програм: тепер можна створювати окремі тренувальні дні (спліти на кшталт <em>«Тренування А»</em>, <em>«Спина/Груди»</em>), додавати вправи зі швидкого списку, прив'язувати <strong>запасну альтернативну вправу</strong> (якщо потрібний тренажер у залі зайнятий) та глобально перейменовувати вправи зі збереженням усієї історії підходів.
             </p>
           </div>
           <aside class="prod-facts">
             <h3>Характеристики</h3>
             <ul class="facts">
+              <li><b>Версія</b><span>v2.0 (Плани + Альтернативи)</span></li>
               <li><b>Платформа</b><span>Web · PWA (Mobile / Desktop)</span></li>
               <li><b>Зберігання</b><span>LocalStorage (локально)</span></li>
               <li><b>Мережа</b><span>100% Offline-ready</span></li>
@@ -140,23 +153,23 @@
         <div class="how-grid">
           <div class="how-step">
             <span class="how-num">01</span>
-            <h3>Додайте свої вправи</h3>
-            <p>У розділі «Вправи» введіть назви вправ вашої програми (напр. «Жим у Сміті», «Присідання», «Тяга блока»).</p>
+            <h3>Налаштуйте свій План</h3>
+            <p>У вкладці «План» створюйте тренувальні спліти (напр. «Тренування А»), змінюйте назви та порядок вправ.</p>
           </div>
           <div class="how-step">
             <span class="how-num">02</span>
-            <h3>Запишіть підхід</h3>
-            <p>На екрані «Тренування» оберіть поточну вправу зі списку та зафіксуйте кількість повторів та робочу вагу.</p>
+            <h3>Додайте вправу й альтернативу</h3>
+            <p>Обирайте зі швидкого списку вже створених вправ та вказуйте запасний варіант, якщо тренажер у залі зайнятий.</p>
           </div>
           <div class="how-step">
             <span class="how-num">03</span>
-            <h3>Збережіть результат</h3>
-            <p>Натисніть «Зберегти» — запис миттєво падає в локальну базу даних без затримок мережі чи очікування серверів.</p>
+            <h3>Фіксуйте підходи в сесії</h3>
+            <p>Записуйте ваги й повторення за секунди. Для наступного тренування натисніть «Нова сесія ↻» у верхньому куті.</p>
           </div>
           <div class="how-step">
             <span class="how-num">04</span>
-            <h3>Відстежуйте прогрес</h3>
-            <p>У вкладці «Історія» переглядайте попередні ваги та повторення, щоб забезпечити постійне прогресивне перевантаження.</p>
+            <h3>Контролюйте прогрес</h3>
+            <p>У вкладці «Історія» обирайте будь-яку вправу, аналізуйте журнал підходів та слідкуйте за зростанням ваг.</p>
           </div>
         </div>
       </section>
@@ -165,15 +178,17 @@
       <section class="prod-sec" id="features">
         <div class="prod-sec-head">
           <p class="sec-eyebrow">04 / Можливості</p>
-          <h2>Ключові особливості</h2>
+          <h2>Що вміє Gym Logbook v2.0</h2>
         </div>
         <ul class="feat-list">
-          <li>Миттєве завантаження (< 100 мс) завдяки легковагій чистій верстці без важких бібліотек</li>
-          <li>Повна працездатність у підвалах та залах без покриття мобільного інтернету</li>
-          <li>Три ключові вкладки навігації: «Тренування», «Вправи», «Історія»</li>
-          <li>Контрастний темний інтерфейс, оптимізований під роботу однією рукою зі смартфона</li>
-          <li>Встановлення як PWA на екран мобільного без завантаження з App Store / Play Market</li>
-          <li>Повна приватність: ваші фізичні показники не виходять за межі вашого смартфона</li>
+          <li>Підтримка кількох програм тренувань («Тренування А», «Тренування Б» тощо) зі швидким перемиканням</li>
+          <li>Опція запасної (альтернативної) вправи на випадок зайнятого тренажера в залі</li>
+          <li>Швидкий вибір із бази вже створених вправ при додаванні в поточну сесію</li>
+          <li>Збереження доданої вправи в шаблон тренування «на постійно» або разово на сесію</li>
+          <li>Глобальне перейменування вправ у вкладці «План» — назва автоматично оновлюється у всіх планах та всій історії</li>
+          <li>Кнопка «Нова сесія ↻» для чистого старту чергового візиту в зал</li>
+          <li>Повна робота офлайн (PWA + Service Worker) навіть у підвальних залах без мережі</li>
+          <li>Контрастний темний UI без реєстрацій, підписок, реклами чи телеметрії</li>
         </ul>
       </section>
 
@@ -194,7 +209,7 @@
           </div>
           <div class="stack-card">
             <span class="stack-g">Зберігання даних</span>
-            <div class="tags"><span>Window.localStorage</span><span>JSON serialization</span></div>
+            <div class="tags"><span>Window.localStorage</span><span>JSON state sync</span></div>
           </div>
           <div class="stack-card">
             <span class="stack-g">Деплой</span>
@@ -237,7 +252,7 @@
         <div class="prod-cta-box">
           <div>
             <h2>Візьміть Gym Logbook на наступне тренування</h2>
-            <p>Записуйте підходи легко, швидко та без зайвих відволікань.</p>
+            <p>Записуйте підходи легко, тримайте альтернативні вправи під рукою та відстежуйте прогрес.</p>
           </div>
           <div class="prod-cta-btns">
             <a class="btn btn-primary" href="https://arsen2010arsen.github.io/Gym-Logbook/" target="_blank" rel="noopener">Відкрити Gym Logbook ↗</a>
