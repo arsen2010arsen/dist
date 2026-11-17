@@ -1,22 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Hero interactive release preview switcher
+  const stageTabs = document.querySelectorAll('.stage-tab');
+  const stageImg = document.getElementById('stageImg');
+  const stageName = document.getElementById('stageName');
+  const stageMeta = document.getElementById('stageMeta');
+  const stageLink = document.getElementById('stageLink');
+
+  stageTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      if (tab.classList.contains('active')) return;
+
+      stageTabs.forEach((t) => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const { shot, title, meta, href } = tab.dataset;
+      if (stageImg && shot) {
+        stageImg.style.opacity = '0';
+        setTimeout(() => {
+          stageImg.src = shot;
+          stageImg.alt = title || '';
+          stageImg.style.opacity = '1';
+        }, 120);
+      }
+      if (stageName && title) stageName.textContent = title;
+      if (stageMeta && meta) stageMeta.textContent = meta;
+      if (stageLink && href) stageLink.href = href;
+    });
+  });
+
+  // 2. Catalog category filter & live search
   const chips = document.querySelectorAll('.chip');
   const searchInput = document.getElementById('searchInput');
   const cards = document.querySelectorAll('.card');
   const emptyState = document.getElementById('emptyState');
 
-  // Modal elements
-  const shotModal = document.getElementById('shotModal');
-  const shotImg = document.getElementById('shotImg');
-  const closeShotModal = document.getElementById('closeShotModal');
-
   let currentCategory = 'all';
   let searchQuery = '';
 
-  // Filter projects logic
   function filterProjects() {
     let visibleCount = 0;
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const cat = card.dataset.cat || '';
       const search = (card.dataset.search || '').toLowerCase();
       const title = (card.querySelector('.card-head h3')?.textContent || '').toLowerCase();
@@ -24,14 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const desc = (card.querySelector('.card-desc')?.textContent || '').toLowerCase();
 
       const matchesCategory = currentCategory === 'all' || cat.split(' ').includes(currentCategory);
-      const matchesSearch = !searchQuery || 
-        title.includes(searchQuery) || 
-        sub.includes(searchQuery) || 
-        desc.includes(searchQuery) || 
+      const matchesSearch =
+        !searchQuery ||
+        title.includes(searchQuery) ||
+        sub.includes(searchQuery) ||
+        desc.includes(searchQuery) ||
         search.includes(searchQuery);
 
       if (matchesCategory && matchesSearch) {
-        card.style.display = 'flex';
+        card.style.display = '';
         visibleCount++;
       } else {
         card.style.display = 'none';
@@ -43,17 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Handle category chip clicks
-  chips.forEach(chip => {
+  chips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
+      chips.forEach((c) => c.classList.remove('active'));
       chip.classList.add('active');
-      currentCategory = chip.dataset.filter;
+      currentCategory = chip.dataset.filter || 'all';
       filterProjects();
     });
   });
 
-  // Handle live search
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
@@ -61,21 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle image load states (for smooth skeleton shimmer)
-  document.querySelectorAll('.card-shot img, .gallery img, .prod-shot-btn img').forEach(img => {
-    const parent = img.parentElement;
-    if (img.complete) {
-      parent.classList.add('loaded');
-    } else {
-      img.addEventListener('load', () => parent.classList.add('loaded'));
-      img.addEventListener('error', () => parent.classList.add('loaded'));
-    }
-  });
+  // 3. Screenshot modal preview (product detail pages)
+  const shotModal = document.getElementById('shotModal');
+  const shotImg = document.getElementById('shotImg');
+  const closeShotModal = document.getElementById('closeShotModal');
 
-  // Handle Screenshot Modal Preview (на сторінках проєктів та галереях)
-  document.querySelectorAll('button[data-shot], [data-shot]:not(a)').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
+  document.querySelectorAll('button[data-shot]').forEach((button) => {
+    button.addEventListener('click', () => {
       if (!shotModal || !shotImg) return;
       const shotUrl = button.dataset.shot;
       const shotAlt = button.dataset.shotAlt || button.querySelector('img')?.alt || 'Скріншот';
@@ -87,32 +106,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Copy to clipboard support
-  document.querySelectorAll('button[data-copy]').forEach(btn => {
+  if (closeShotModal && shotModal) {
+    closeShotModal.addEventListener('click', () => shotModal.close());
+    shotModal.addEventListener('click', (e) => {
+      if (e.target === shotModal) shotModal.close();
+    });
+  }
+
+  // 4. Copy command buttons
+  document.querySelectorAll('button[data-copy]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const text = btn.dataset.copy;
       if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
         const orig = btn.textContent;
-        btn.textContent = 'скопійовано!';
-        btn.classList.add('copied');
+        btn.textContent = 'Скопійовано';
         setTimeout(() => {
           btn.textContent = orig;
-          btn.classList.remove('copied');
         }, 1500);
       });
     });
   });
-
-  if (closeShotModal && shotModal) {
-    closeShotModal.addEventListener('click', () => {
-      shotModal.close();
-    });
-
-    shotModal.addEventListener('click', (e) => {
-      if (e.target === shotModal) {
-        shotModal.close();
-      }
-    });
-  }
 });
